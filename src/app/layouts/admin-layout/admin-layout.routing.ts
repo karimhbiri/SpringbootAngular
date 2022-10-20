@@ -8,6 +8,8 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { AddAccountComponent } from 'app/add-account/add-account.component';
+import { AccountsListComponent } from 'app/accounts-list/accounts-list.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -54,7 +56,9 @@ export const AdminLayoutRoutes: Routes = [
     // }
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'add-client',     component: AddClientComponent },
+    { path: 'add-account',    component: AddAccountComponent },
     { path: 'clients-list',   component: ClientsListComponent },
+    { path: 'accounts-list',  component: AccountsListComponent },
     { path: 'typography',     component: TypographyComponent },
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },

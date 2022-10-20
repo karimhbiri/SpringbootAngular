@@ -9,20 +9,20 @@ export class AccountService {
 
   constructor(private http: HttpClient) { }
 
-  updateClient(params : any = []) {
-    return this.http.get(sharedConstants.API_ENDPOINT+ 'clients/update', {params})
+  updateAccount(params : any = []) {
+    return this.http.get(sharedConstants.API_ENDPOINT+ 'accounts/update', {params})
   }
 
-  removeClient(id : any ,params : any = []) {
-      return this.http.post(sharedConstants.API_ENDPOINT + 'clients/delete/'+id , params);
+  removeAccount(id : any ,params : any = []) {
+      return this.http.post(sharedConstants.API_ENDPOINT + 'accounts/delete/'+id , params);
   }
 
-  addClient(params : any = []) {
-    return this.http.post(sharedConstants.API_ENDPOINT + 'clients/add' , params);
+  addAccount(params : any = []) {
+    return this.http.post(sharedConstants.API_ENDPOINT + 'accounts/add' , params);
   }
 
-  getClient(id : any ,params : any = []) {
-    return this.http.get(sharedConstants.API_ENDPOINT+ 'clients/'+id, {params})
+  getAccount(id : any ,params : any = []) {
+    return this.http.get(sharedConstants.API_ENDPOINT+ 'accounts/'+id, {params})
   }
 
 }
