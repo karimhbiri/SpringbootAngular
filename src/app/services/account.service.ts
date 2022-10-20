@@ -25,4 +25,8 @@ export class AccountService {
     return this.http.get(sharedConstants.API_ENDPOINT+ 'accounts/'+id, {params})
   }
 
+  getAccounts(params : any = []) {
+    return this.http.get(sharedConstants.API_ENDPOINT+ 'accounts/', {params})
+  }
+
 }

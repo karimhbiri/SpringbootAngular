@@ -10,7 +10,7 @@ export class ClientService {
   constructor(private http: HttpClient) { }
 
   updateClient(params : any = []) {
-    return this.http.get(sharedConstants.API_ENDPOINT+ 'clients/update', {params})
+    return this.http.post(sharedConstants.API_ENDPOINT+ 'clients/update', params)
   }
 
   removeClient(id : any ,params : any = []) {
@@ -23,6 +23,10 @@ export class ClientService {
 
   getClient(id : any ,params : any = []) {
     return this.http.get(sharedConstants.API_ENDPOINT+ 'clients/'+id, {params})
+  }
+
+  getClients(params : any = []) {
+    return this.http.get(sharedConstants.API_ENDPOINT+ 'clients/', {params})
   }
 
 }

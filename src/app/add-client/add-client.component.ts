@@ -18,10 +18,12 @@ export class AddClientComponent implements OnInit {
   clientPostalCode: string = "";
   clientCountry: string = "";
   clientAboutMe: string = "";
+  clients: any[] = [{cin:'1111',nom:'nom',prenom:'prenom'}];
 
   constructor(private clienService: ClientService) { }
 
   ngOnInit() {
+    this.getClients();
   }
 
   addClient() {
@@ -39,7 +41,7 @@ export class AddClientComponent implements OnInit {
           alert('error');
         },
         complete: () => {
-    
+          this.getClients();
         }
       })
     }
@@ -47,6 +49,29 @@ export class AddClientComponent implements OnInit {
     {
       alert('Please verify your input fields.');
     }
+  }
+
+  getClients() {
+    this.clienService.getClients().subscribe({
+      next: (event: any) => {
+        event.array.forEach((element, index) => {
+          if(index < 3) {
+            this.clients.push(element);
+          }
+        });
+      },
+      error: err => {
+        console.log('no clients found!');
+      },
+      complete: () => {
+  
+      }
+    })
+  }
+
+  openProfile(cin) {
+    // TODO
+    alert(cin);
   }
 
 }

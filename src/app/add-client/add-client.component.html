@@ -48,7 +48,7 @@
                           <div class="row">
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="City" type="text"[(ngModel)]="clientCity">
+                                  <input matInput placeholder="City" type="text" [(ngModel)]="clientCity">
                                 </mat-form-field>
                               </div>
                               <div class="col-md-4">
@@ -121,55 +121,21 @@
                             </th>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr *ngFor="let client of clients">
                                 <td>
-                                    1
+                                    {{client.cin}}
                                 </td>
                                 <td>
-                                    Dakota Rice
+                                    {{client.prenom}}
                                 </td>
                                 <td>
-                                    Niger
+                                    {{client.nom}}
                                 </td>
                                 <td>
-                                    Oud-Turnhout
+                                    {{client.email}}
                                 </td>
                                 <td>
-                                    $36,738
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    2
-                                </td>
-                                <td>
-                                    Minerva Hooper
-                                </td>
-                                <td>
-                                    Curaçao
-                                </td>
-                                <td>
-                                    Sinaai-Waas
-                                </td>
-                                <td>
-                                    $23,789
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    3
-                                </td>
-                                <td>
-                                    Sage Rodriguez
-                                </td>
-                                <td>
-                                    Netherlands
-                                </td>
-                                <td>
-                                    Baileux
-                                </td>
-                                <td>
-                                    $56,142
+                                    <a class="m-action-button" (click)="openProfile(client.cin)">check<i _ngcontent-roa-c48="" class="material-icons">face</i></a>
                                 </td>
                             </tr>
                         </tbody>

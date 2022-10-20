@@ -1,0 +1,30 @@
+.m-action-button {
+    margin: 0 10px;
+    color: #424242;
+    padding: 5px;
+    cursor: pointer;
+    border-bottom: 1px solid #c1c1c1;
+}
+.row {
+    position: relative;
+}
+.m-edit-modal {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, 0%, 0);
+    z-index: 2;
+}
+.m-edit-modal::before {
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.182);
+    position: absolute;
+    z-index: 0;
+    transform: translate3d(-29vw, -25%, 0);
+}
+.is-hidden {
+    display: none;
+}
