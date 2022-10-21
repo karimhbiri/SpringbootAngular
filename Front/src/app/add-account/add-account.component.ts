@@ -14,7 +14,7 @@ export class AddAccountComponent implements OnInit {
   clients: any[] = [{cin:'110994545',nom: 'Oussema', prenom:'Kassis'},{cin:'12345678',nom: 'nom', prenom:'prenom'}];
   account: any = null;
   accountRib: string = "";
-  accountDate: string = "";
+  accountSolde: string = "";
 
   constructor(private clientService: ClientService, private accountService: AccountService,private router: Router) { }
 
@@ -40,10 +40,11 @@ export class AddAccountComponent implements OnInit {
     if(this.accountRib !== '' && this.selectedClient !== '') {
       this.account = {
         rib: this.accountRib,
-        date: this.accountDate,
-        clientCin: this.selectedClient,
+        solde: this.accountSolde,
+        cin: this.selectedClient,
       }
       if (confirm('Do you want to create a new account?')) {
+        console.log(this.account);
         this.accountService.addAccount(this.account).subscribe({
           next: (event: any) => {
             alert('Account has been created');

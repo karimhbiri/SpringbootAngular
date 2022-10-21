@@ -13,12 +13,12 @@ export class ClientService {
     return this.http.post(sharedConstants.API_ENDPOINT+ 'clients/update', params)
   }
 
-  removeClient(id : any ,params : any = []) {
-      return this.http.post(sharedConstants.API_ENDPOINT + 'clients/delete/'+id , params);
+  removeClient(id : any) {
+      return this.http.get(sharedConstants.API_ENDPOINT + 'clients/delete/'+id);
   }
 
   addClient(params : any = []) {
-    return this.http.post(sharedConstants.API_ENDPOINT + 'clients/add' , params);
+    return this.http.post(sharedConstants.API_ENDPOINT + 'clients/save' , params);
   }
 
   getClient(id : any ,params : any = []) {
@@ -26,7 +26,7 @@ export class ClientService {
   }
 
   getClients(params : any = []) {
-    return this.http.get(sharedConstants.API_ENDPOINT+ 'clients/', {params})
+    return this.http.get(sharedConstants.API_ENDPOINT+ 'clients/all-json', {params})
   }
 
 }

@@ -24,7 +24,7 @@
                                       Client Cin
                                   </th>
                                   <th>
-                                      Created At
+                                      Balance
                                   </th>
                                   <th>
                                       Actions
@@ -45,7 +45,7 @@
                                         {{account.client.cin}}
                                     </td>
                                     <td>
-                                        {{account.createdAt}}
+                                        {{account.solde}}
                                     </td>
                                     <td>
                                         <button (click)="editAccount(account.id)" mat-raised-button type="button" matTooltip="Edit Account" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
@@ -91,7 +91,7 @@
                             </div>
                             <div class="col-md-6">
                               <mat-form-field class="example-full-width">
-                                <input matInput placeholder="Created At" [(ngModel)]="accountCreatedAt" type="date">
+                                <input matInput placeholder="Created At" [(ngModel)]="accountSolde" type="date">
                               </mat-form-field>
                             </div>
                         </div>

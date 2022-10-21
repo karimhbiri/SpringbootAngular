@@ -15,7 +15,7 @@ export class AccountsListComponent implements OnInit {
   accountRib: string = "";
   accountClientCin: string = "";
   accountClientFN: string = "";
-  accountCreatedAt : string = "";
+  accountSolde : string = "";
   accounts: any[] = [{id:'12',rib:'123456789879456', client:{cin:'110994545',nom: 'nom', prenom:'prenom'}, createdAt:'21-10-2022'}];
   myAccount: any = null;
 
@@ -63,7 +63,7 @@ export class AccountsListComponent implements OnInit {
         this.accountId = elem.cin;
         this.accountRib = elem.prenom;
         this.selectedClient = elem.client.cin;
-        this.accountCreatedAt = elem.createdAt;
+        this.accountSolde = elem.solde;
       }
     })
     document.querySelector('.m-edit-modal').classList.remove('is-hidden');
@@ -77,8 +77,8 @@ export class AccountsListComponent implements OnInit {
     this.myAccount = {
       id: this.accountId,
       rib: this.accountRib,
-      clientCin: this.accountClientCin,
-      createdAt: this.accountCreatedAt
+      cin: this.accountClientCin,
+      solde: this.accountSolde
     }
 
     this.accountService.updateAccount(this.myAccount).subscribe({

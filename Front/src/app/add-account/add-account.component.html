@@ -27,7 +27,7 @@
                               </div>
                               <div class="col-md-6">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Created At" [(ngModel)]="accountDate" type="date">
+                                  <input matInput placeholder="Balance" [(ngModel)]="accountSolde" type="number">
                                 </mat-form-field>
                               </div>
                           </div>
@@ -83,7 +83,7 @@
                       </a>
                   </div>
                   <div class="card-body">
-                      <h6 class="card-category text-gray">{{accountDate}}</h6>
+                      <h6 class="card-category text-gray">{{accountSolde | number: '1.0-0'}} TND</h6>
                       <h4 class="card-title">{{accountRib}}</h4>
                       <p class="card-description">
                           {{selectedClient}}
