@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Ajout de Compte</h1>
+<form th:action="@{/comptes/save}" method="POST">
+<table>
+<tr>
+<td>Solde</td>
+<td><input type="text" name="solde" /></td>
+</tr>
+<tr>
+<td>NomClient</td>
+<td><input type="text" name="nomClient" /></td>
+</tr>
+<tr>
+<td></td>
+<td><input type="submit" value="Save" /></td>
+</tr>
+</table>
+
+</form>
+
+</body>
+</html>
