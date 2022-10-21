@@ -18,7 +18,7 @@ export class AddClientComponent implements OnInit {
   clientPostalCode: string = "";
   clientCountry: string = "";
   clientAboutMe: string = "";
-  clients: any[] = [{cin:'1111',nom:'nom',prenom:'prenom'}];
+  clients: any[] = [{cin:'110994545',nom: 'nom', prenom:'prenom'}];
 
   constructor(private clienService: ClientService) { }
 

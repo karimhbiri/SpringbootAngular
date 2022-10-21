@@ -42,9 +42,15 @@
                                         {{client.email}}
                                     </td>
                                     <td>
-                                        <a class="m-action-button" (click)="removeClient(client.cin)">Delete<i _ngcontent-roa-c48="" class="material-icons">delete</i></a>
-                                        <a class="m-action-button" (click)="editClient(client.cin)">Edit<i _ngcontent-roa-c48="" class="material-icons">edit</i></a>
-                                        <a class="m-action-button" (click)="openProfile(client.cin)">Open<i _ngcontent-roa-c48="" class="material-icons">face</i></a>
+                                        <button (click)="editClient(client.cin)" mat-raised-button type="button" matTooltip="Edit Client" [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button (click)="removeClient(client.cin)" mat-raised-button type="button" matTooltip="Remove Client" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                        <button (click)="openProfile(client.cin)" mat-raised-button type="button" matTooltip="Open Profile" [matTooltipPosition]="'above'" class="btn btn-success btn-link btn-sm btn-just-icon">
+                                            <i class="material-icons">face</i>
+                                        </button>
                                     </td>
                                 </tr>
                               </tbody>
@@ -93,24 +99,24 @@
                         <div class="row">
                             <div class="col-md-12">
                               <mat-form-field class="example-full-width">
-                                <input matInput placeholder="Adress" type="text" [(ngModel)]="clientAddress">
+                                <input matInput placeholder="Adress" type="text" >
                               </mat-form-field>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4">
                               <mat-form-field class="example-full-width">
-                                <input matInput placeholder="City" type="text"[(ngModel)]="clientCity">
+                                <input matInput placeholder="City" type="text">
                               </mat-form-field>
                             </div>
                             <div class="col-md-4">
                               <mat-form-field class="example-full-width">
-                                <input matInput placeholder="Country" type="text" [(ngModel)]="clientCountry">
+                                <input matInput placeholder="Country" type="text" >
                               </mat-form-field>
                             </div>
                             <div class="col-md-4">
                               <mat-form-field class="example-full-width">
-                                <input matInput placeholder="Postal Code" type="text" [(ngModel)]="clientPostalCode">
+                                <input matInput placeholder="Postal Code" type="text" >
                               </mat-form-field>
                             </div>
                         </div>
@@ -118,7 +124,7 @@
                             <div class="col-md-12">
                               <label>About Me</label>
                               <mat-form-field class="example-full-width">
-                                 <textarea matInput placeholder="(Optional)." [(ngModel)]="clientAboutMe"></textarea>
+                                 <textarea matInput placeholder="(Optional)." ></textarea>
                                </mat-form-field>
                             </div>
                         </div>
@@ -128,7 +134,7 @@
                     </form>
                 </div>
             </div>
-        </div>
+          </div>
       </div>
   </div>
 </div>
