@@ -12,7 +12,7 @@
                           <div class="row">
                             <mat-form-field appearance="fill" style="margin-left: 20px;">
                               <mat-label>Client: </mat-label>
-                              <mat-select [(ngModel)]="selectedClient" name="food">
+                              <mat-select [(ngModel)]="selectedClient" name="clients">
                                 <mat-option *ngFor="let client of clients" [value]="client.cin">
                                   {{client.cin}} / {{client.nom}} {{client.prenom}}
                                 </mat-option>

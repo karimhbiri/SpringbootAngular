@@ -12,6 +12,8 @@ export class DashboardComponent implements OnInit {
 
   clientsNumber: number = 0;
   accountsNumber: number = 0;
+  clients: any[] = [{cin:'110994545',nom: 'nom', prenom:'prenom',email:'email@'}];
+
 
   constructor(private clientService: ClientService, private accountService: AccountService) { }
   // startAnimationForLineChart(chart){
@@ -158,6 +160,11 @@ export class DashboardComponent implements OnInit {
   getClients() {
     this.clientService.getClients().subscribe({
       next: (event: any) => {
+        event.array.forEach((element, index) => {
+          if(index < 4) {
+            this.clients.push(element);
+          }
+        });
         this.clientsNumber = event.length;
       },
       error: err => {

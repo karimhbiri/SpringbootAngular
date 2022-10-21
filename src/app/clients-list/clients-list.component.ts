@@ -18,7 +18,7 @@ export class ClientsListComponent implements OnInit {
   clientPostalCode: string = "";
   clientCountry: string = "";
   clientAboutMe: string = "";
-  clients: any[] = [{cin:'1111',nom:'nom',prenom:'prenom',email:'email@'}];
+  clients: any[] = [{cin:'110994545',nom: 'nom', prenom:'prenom',email:'email@'}];
   myClient: any = null;
 
   constructor(private clientService: ClientService) { }
@@ -54,6 +54,9 @@ export class ClientsListComponent implements OnInit {
         this.clientFirstName = elem.prenom;
         this.clientLastName = elem.nom;
         this.clientEmail = elem.email;
+        console.log(this.clientCin);
+        console.log(this.clientFirstName);
+        console.log(this.clientLastName);
         console.log(this.clientEmail);
       }
     })
